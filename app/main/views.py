@@ -1,6 +1,4 @@
-from os import abort
-from flask import render_template
-from flask import render_template,request,redirect,url_for
+from flask import render_template,request,redirect,url_for,abort
 from flask_login import login_required,current_user
 from ..models import Pitches, User, Comments
 from . import main
@@ -16,7 +14,7 @@ def index():
     '''
     message= "Hello"
     title= 'SiR FELIX Pitch Hub :::'
-    return render_template('index.html', message=message,title=title)
+    return render_template('index.html', message = message,title=title)
 
 @main.route('/pitch/', methods = ['GET','POST'])
 @login_required
@@ -96,10 +94,10 @@ def comment(id):
     '''
     function to return the comments
     '''
-    comm =Comments.get_comment(id)
-    print(comm)
+    com =Comments.get_comment(id)
+    # print(com)
     title = 'Pitch Comments'
-    return render_template('comments.html',comment = comm,title = title)
+    return render_template('comments.html',comment = com,title = title)
 
 @main.route('/new_comment/<int:pitches_id>', methods = ['GET', 'POST'])
 @login_required
