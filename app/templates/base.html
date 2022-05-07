@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome - SiR FELIX Pitch Hub ::</title>
+    {% endif %}
+</head>
+
+<body>
+    {% extends 'bootstrap/base.html'%}
+    <!-- Navbar block  -->
+    {% block navbar %} {% include 'navbar.html' %} {% endblock %}
+    <!-- BODY block  -->
+    {% block content %} {% endblock %}
+</body>
+
+</html>

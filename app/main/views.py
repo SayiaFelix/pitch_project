@@ -15,7 +15,7 @@ def index():
     return
     '''
     message= "Hello"
-    title= 'SiR Felix Pitch Hub!'
+    title= 'SiR FELIX Pitch Hub :::'
     return render_template('index.html', message=message,title=title)
 
 @main.route('/pitch/', methods = ['GET','POST'])
@@ -98,7 +98,7 @@ def comment(id):
     '''
     comm =Comments.get_comment(id)
     print(comm)
-    title = 'Pitche Comments'
+    title = 'Pitch Comments'
     return render_template('comments.html',comment = comm,title = title)
 
 @main.route('/new_comment/<int:pitches_id>', methods = ['GET', 'POST'])
