@@ -17,8 +17,8 @@ def login():
 
         flash('Invalid author or Password')
 
-    title = "Pitches login"
-    return render_template('auth/login.html',login_form = login_form,title=title)
+    title = " SiR FELIX Pitches login"
+    return render_template('auth/login.html',login_form = login_form, title=title)
 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
@@ -31,7 +31,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Welcome to Pitch It Up!","email/welcome_user",user.email,user=user)
+        mail_message("Welcome to SiR FELIX PItch Hub!","email/welcome_user",user.email,user=user)
 
         title = "New Account"
 

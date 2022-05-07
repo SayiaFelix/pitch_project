@@ -3,8 +3,7 @@ import os
 class Config:
 
     SECRET_KEY = 'f2GDBACdGn5ZGx$A!gC[:+*/b.JS?('
-    # SECRET_KEY=os.environ.get('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafumsela@localhost/pitches'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     #  email configurations
@@ -27,12 +26,12 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
 
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafumsela@localhost/pitches_test'
-  
+#   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitches_test'
+  pass
 
 class DevConfig(Config):
     '''
@@ -40,7 +39,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafumsela@localhost/pitches'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist'
     DEBUG = True
 
 config_options = {

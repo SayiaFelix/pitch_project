@@ -44,9 +44,11 @@ def category(cate):
     function to return the pitches by category
     '''
     category = Pitches.get_pitches(cate)
-  
+
     title = f'{cate}'
-    return render_template('category.html',title = title, category = category)
+    return render_template('categories.html',title = title, category = category)
+
+
 
 @main.route('/user/<uname>')
 def profile(uname):
