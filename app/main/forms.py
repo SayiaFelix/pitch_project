@@ -4,14 +4,14 @@ from wtforms.validators import DataRequired
 
 
 class PitchForm(FlaskForm):
-    title = StringField('Pitch Title')
-    category = SelectField(u'Pitch Category', choices=[('life', 'life'), ('coding', 'coding'), ('funny', 'funny')])
-    pitch = TextAreaField('Pitch')
+    title = StringField('Pitch Name')
+    category = SelectField(u'Pitch Category', choices=[('Inspiration', 'Inspiration'), ('Pickup lines', 'Pickup lines'), ('Memes', 'Memes')])
+    pitch = TextAreaField('Drop Pitch')
     submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):
 
-    comment = TextAreaField('Comment')
+    comment = TextAreaField('Drop Comment')
     submit = SubmitField('Post Comments')
 
 class UpdateProfile(FlaskForm):
