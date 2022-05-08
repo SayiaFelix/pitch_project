@@ -36,6 +36,8 @@ def create_app(config_name):
     login_manager.init_app(app)
     mail.init_app(app)
 
+    with app.app_context():
+        db.create_all()
 
     # Registering the blueprint
     from .main import main as main_blueprint
