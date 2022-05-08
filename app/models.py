@@ -3,6 +3,9 @@ from flask_login import UserMixin, current_user
 from . import login_manager
 from datetime import datetime
 from . import db
+from werkzeug.utils import secure_filename
+
+
 
 @login_manager.user_loader
 def load_user(user_id):
