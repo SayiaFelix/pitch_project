@@ -1,16 +1,16 @@
 from flask import render_template,request,redirect,url_for,abort
 from flask_login import login_required,current_user
-from ..models import Pitches, User, Comments
+from ..models import Pitches, User, Comments, Upvote, Downvote
 from . import main
 from .. import db,photos
-from .forms import PitchForm,CommentForm, UpdateProfile
+from .forms import PitchForm, CommentForm, UpdateProfile
 
 
 @main.route('/')
 def index():
     '''
     index page
-    return
+    
     '''
     message= "Hello"
     title= 'SiR FELIX Pitch Hub :::'
@@ -27,7 +27,7 @@ def new_pitch():
         pitch= form.pitch.data
         title=form.title.data
 
-        # Updated pitchinstance
+    
         new_pitch = Pitches(title=title,category= category,pitch= pitch,user_id=current_user.id)
 
         title='New Pitch'
@@ -117,3 +117,32 @@ def new_comment(pitches_id):
         return redirect(url_for('main.index'))
     title='New Pitch'
     return render_template('new_comment.html',title=title,comment_form = form,pitches_id=pitches_id)
+
+
+@main.route('/pitch/upvote/<int:pitch_id>/upvote', methods = ['GET', 'POST'])
+@login_required
+def upvote(pitch_id):
+    pitch = Pitches.query.get(pitch_id)
+    user = current_user
+    pitch_upvotes = Upvote.query.filter_by(pitch_id=pitch_id)
+
+    if Upvote.query.filter(Upvote.user_id==user.id, Upvote.pitch_id==pitch_id).first():
+        return redirect(url_for('main.index'))
+
+    new_upvote = Upvote(pitch_id=pitch_id, user = current_user)
+    new_upvote.save_upvotes()
+    return redirect(url_for('main.index'))
+
+@main.route('/pitch/downvote/<int:pitch_id>/downvote', methods = ['GET', 'POST'])
+@login_required
+def downvote(pitch_id):
+    pitch = Pitches.query.get(pitch_id)
+    user = current_user
+    pitch_downvotes = Downvote.query.filter_by(pitch_id=pitch_id)
+
+    if Downvote.query.filter(Downvote.user_id==user.id, Downvote.pitch_id==pitch_id).first():
+        return redirect(url_for('main.index'))
+
+    new_downvote = Downvote(pitch_id=pitch_id, user = current_user)
+    new_downvote.save_downvotes()
+    return redirect(url_for('main.index'))
