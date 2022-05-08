@@ -4,8 +4,8 @@ class Config:
 
     SECRET_KEY = 'f2GDBACdGn5ZGx$A!gC[:+*/b.JS?('
   
-    SQLALCHEMY_DATABASE_URI = 'postgres://lybbhvznzgrbxa:bed0b7b6f15b58eeb87996fde36aa4ae79bc0bd2bb1f7a579582334afc7ccca4@ec2-3-217-113-25.compute-1.amazonaws.com:5432/d8so18ov06lcno'
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist'
+    # SQLALCHEMY_DATABASE_URI = 'postgres://lybbhvznzgrbxa:bed0b7b6f15b58eeb87996fde36aa4ae79bc0bd2bb1f7a579582334afc7ccca4@ec2-3-217-113-25.compute-1.amazonaws.com:5432/d8so18ov06lcno'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
     #  email configurations
@@ -22,22 +22,17 @@ class Config:
         pass
 
 
-class ProdConfig(Config):
-    '''
-    Production  configuration child class
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
+
 class ProdConfig(Config):
 
-     uri = os.getenv("DATABASE_URL")  # or other relevant config var
-     if uri.startswith("postgres://"):
-        uri = uri.replace("postgres://", "postgresql://", 1)
+    #  uri = os.getenv("DATABASE_URL")  # or other relevant config var
+    #  if uri.startswith("postgres://"):
+    #     uri = uri.replace("postgres://", "postgresql://", 1)
         
         # rest of connection code using the connection string `uri`   
  
         # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
+     pass
 class TestConfig(Config):
 
   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitches_test'
