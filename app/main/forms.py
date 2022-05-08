@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired
 
 class PitchForm(FlaskForm):
     title = StringField('Pitch Name')
-    category = SelectField(u'Pitch Category', choices=[('Inspiration', 'inspiration'), ('Pickup_lines', 'pickup_lines'), ('Memes', 'memes'),('POLITICAL', 'love'), ('RELIGIOUS', 'religious'), ('SPORTY', 'sporty')])
+    category = SelectField(u'Pitch Category', choices=[('Inspiration', 'Inspiration'), ('Pickup_lines', 'Pickup_lines'), ('Memes', 'Memes'),('POLITICAL', 'LoVe'), ('RELIGIOUS', 'Religious'), ('SPORTY', 'Sporty')])
     pitch = TextAreaField('Drop Pitch')
     submit = SubmitField('Submit')
 
@@ -19,7 +19,7 @@ class UpvoteForm(FlaskForm):
 
 class Downvote(FlaskForm):
     submit = SubmitField()
-    
+
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [DataRequired()])
     submit = SubmitField('Submit')
