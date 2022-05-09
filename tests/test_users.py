@@ -1,5 +1,6 @@
 import unittest
 from app.models import User,Comments, Pitches
+from app import db
 
 class UserModelTest(unittest.TestCase):
     def setUp(self):
