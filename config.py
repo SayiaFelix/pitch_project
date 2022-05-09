@@ -4,7 +4,7 @@ class Config:
 
     SECRET_KEY = 'f2GDBACdGn5ZGx$A!gC[:+*/b.JS?('
   
-    # SQLALCHEMY_DATABASE_URI = 'postgres://lybbhvznzgrbxa:bed0b7b6f15b58eeb87996fde36aa4ae79bc0bd2bb1f7a579582334afc7ccca4@ec2-3-217-113-25.compute-1.amazonaws.com:5432/d8so18ov06lcno'
+    SQLALCHEMY_DATABASE_URI = 'postgres://lybbhvznzgrbxa:bed0b7b6f15b58eeb87996fde36aa4ae79bc0bd2bb1f7a579582334afc7ccca4@ec2-3-217-113-25.compute-1.amazonaws.com:5432/d8so18ov06lcno'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
 
