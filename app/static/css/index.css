@@ -4,7 +4,7 @@ body {
     width: 100%;
 }
 
-
-/* .navbar-nav {
-    margin-right: 10%;
-} */
+.card {
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px rgb(3, 3, 3, 0.75);
+}
