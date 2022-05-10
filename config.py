@@ -20,15 +20,15 @@ class Config:
         pass
 
 class ProdConfig(Config):
-    #  uri = os.getenv("DATABASE_URL")  # or other relevant config var
-    #  if uri.startswith("postgres://"):
-    #     uri = uri.replace("postgres://", "postgresql://", 1)
+     uri = os.getenv("DATABASE_URL")  # or other relevant config var
+     if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://", 1)
 
-    #     SQLALCHEMY_DATABASE_URI=uri
+        SQLALCHEMY_DATABASE_URI=uri
         # rest of connection code using the connection string `uri`   
  
     #  SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-  pass
+  
 class TestConfig(Config):
       SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:jaysafu@localhost/pitcheslist_test'
   
