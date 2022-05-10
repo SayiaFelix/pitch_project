@@ -26,9 +26,9 @@
                     </blockquote>
                 </div>
                 <div class="card-footer bg-transparent border-success">
-                    <button type="button" class="btn btn-outline-success btn-lg"><a href="/new_comment/{{category.id}}">Comment</a></button> <button type="button" class="btn btn-outline-success btn-lg"><a href="/comments/{{category.id}}">View comments</a></button>
-                    <button type="button" class="btn btn-warning bt-lg" (click)='upVoteButtonClick()'>UpVote</button>
-                    <button type="button" class="btn btn-success bt-lg" (click)='downVoteButtonClick()'>DownVote</button>
+                    <button type="button" class="btn btn-outline-success btn-lg"><a href="/new_comment/{{category.id}}"> :: Drop Comment ::</a></button> <button type="button" class="btn btn-outline-success btn-lg"><a href="/comments/{{category.id}}">:: Review comments ::</a></button>
+                    <button type="button" class="btn btn-warning bt-lg" (click)='upVoteButtonClick()'>:: UpVote ::</button>
+                    <button type="button" class="btn btn-success bt-lg" (click)='downVoteButtonClick()'>:: DownVote ::</button>
                 </div>
             </div>
             <br> {% endfor %}
