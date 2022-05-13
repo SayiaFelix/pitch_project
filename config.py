@@ -26,7 +26,7 @@ class ProdConfig(Config):
 
         SQLALCHEMY_DATABASE_URI=uri
         # rest of connection code using the connection string `uri`   
- 
+
     #  SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
